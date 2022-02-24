@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="WpfApp17m.ColorIndex"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Name="colorIndex">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Slider Name="sliderRed" Minimum="0" Maximum="255"  Grid.Column="1" Grid.Row="0"
+                Margin="{Binding ElementName=colorIndex, Path=Padding}"
+                Value="{Binding ElementName=colorIndex, Path= Red}"/>
+        <TextBlock Text="R" FontSize="14" Foreground="red" FontWeight="Bold" Grid.Column="0" Grid.Row="0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Margin="2"/>
+        <Slider Name="sliderGreen" Minimum="0" Maximum="255" Grid.Column="1" Grid.Row="1" 
+                Margin="{Binding ElementName=colorIndex, Path=Padding}"
+                Value="{Binding ElementName=colorIndex, Path= Green}"/>
+        <TextBlock Text="G" FontSize="14" Foreground="Green" FontWeight="Bold" Grid.Column="0" Grid.Row="1" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Margin="2"/>
+        <Slider Name="sliderBlue" Minimum="0" Maximum="255" Grid.Row="2" Grid.Column="1"
+                Margin="{Binding ElementName=colorIndex, Path=Padding}"
+                Value="{Binding ElementName=colorIndex, Path= Blue}"/>
+        <TextBlock Text="B" FontSize="14" Foreground="Blue" FontWeight="Bold" Grid.Column="0" Grid.Row="2" 
+                   VerticalAlignment="Center"  
+                   HorizontalAlignment="Center" Margin="2"/>
+        <Rectangle Grid.Column="2" Grid.RowSpan="3"
+                   Width="50"  Margin="5" Stroke="Black"
+                   StrokeThickness="1"
+                   StrokeDashArray="2 1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{Binding ElementName=colorIndex, Path=Color}"></SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        
+
+    </Grid>
+</UserControl>
